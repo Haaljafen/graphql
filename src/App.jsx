@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound.jsx";
 import ProtectedRoute from "./routes/ProtectedRoute.jsx";
 
 export default function App() {
+  console.log("App rendering, current path:", window.location.pathname);
   return (
     <Routes>
       <Route path="/" element={<Navigate to="login" replace />} />
