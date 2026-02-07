@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        var l = window.location;
+        var parts = l.pathname.split('/');
+        var repo = parts.length > 1 ? parts[1] : '';
+        var base = repo ? '/' + repo : '';
+        var remainder = '/' + parts.slice(2).join('/');
+        if (remainder === '/') remainder = '';
+        var dest = base + '/?p=' + encodeURIComponent(remainder + l.search + l.hash);
+        l.replace(l.protocol + '//' + l.host + dest);
+      })();
+    </script>
+  </body>
+</html>
