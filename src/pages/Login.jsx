@@ -15,7 +15,9 @@ export default function Login() {
 
   // If already logged in, don't show login page
   useEffect(() => {
+    console.log('Login useEffect - isAuthed:', isAuthed);
     if (isAuthed) {
+      console.log('Redirecting to profile from Login');
       navigate("/profile", { replace: true });
     }
   }, [isAuthed, navigate]);
