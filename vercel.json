@@ -1,15 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/profile",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/login",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ]
